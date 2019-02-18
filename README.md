@@ -6,4 +6,4 @@
  - Create Tab
     - Create a file to store my data, and using array.map to create tabs
  - Array manipulate using .reduce .map
- 
+ - Destructuring assignment
