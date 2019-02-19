@@ -7,3 +7,9 @@
     - Create a file to store my data, and using array.map to create tabs
  - Array manipulate using .reduce .map
  - Destructuring assignment
+ - Creating Dialogs
+ - Handle user inputs/click
+ - Use withStyles connector
+ - Create forms/dialogs
+ - Change the state using setState
+ 

@@ -21,26 +21,49 @@ class App extends Component {
                 return exercises;
             }, {})
         )
-    }
-    handleCategorySelected = category => {
+    };
+
+    handleCategorySelect = category => {
         this.setState({
         category
         });
-    }
+    };
 
-    handleExerciseSelected = id => {
+    handleExerciseSelect = id => {
         this.setState(({ exercises }) => ({
             exercise: exercises.find(ex => ex.id === id)
         }));
-    }
+    };
+
+    handleExerciseCreate = exercise => {
+        this.setState(({ exercises }) => ({
+            exercises: [
+                ...exercises,
+                exercise
+            ]
+        }));
+    };
+
     render() {
         const exercises = this.getExercisesByMuscles();
         const { category, exercise } = this.state;
         return (
             <div>
-                <Header />
-                <Exercises exercise={exercise} category={category} exercises={exercises} onSelect={this.handleExerciseSelected}/>
-                <Footer  category={category} muscles={muscles} onSelect={this.handleCategorySelected}/>
+                <Header 
+                    muscles={muscles} 
+                    onExerciseCreate={this.handleExerciseCreate}
+                />
+                <Exercises 
+                    exercise={exercise} 
+                    category={category} 
+                    exercises={exercises} 
+                    onSelect={this.handleExerciseSelect}
+                />
+                <Footer 
+                    category={category} 
+                    muscles={muscles} 
+                    onSelect={this.handleCategorySelect}
+                />
             </div>
         );
     }
